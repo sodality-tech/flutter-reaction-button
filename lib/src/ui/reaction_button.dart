@@ -8,11 +8,10 @@ import '../utils/extensions.dart';
 import '../utils/reactions_position.dart';
 import 'reactions_box.dart';
 
-typedef OnReactionChanged<T> = void Function(T?);
 
 class ReactionButton<T> extends StatefulWidget {
   /// This triggers when reaction button value changed.
-  final OnReactionChanged<T> onReactionChanged;
+  final ValueChanged<T?> onReactionChanged;
 
   /// Default reaction button widget
   final Reaction<T>? initialReaction;

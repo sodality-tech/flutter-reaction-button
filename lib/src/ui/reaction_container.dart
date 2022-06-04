@@ -9,7 +9,7 @@ import 'reactions_box.dart';
 
 class ReactionContainer<T> extends StatefulWidget {
   /// This triggers when reaction button value changed.
-  final void Function(T?) onReactionChanged;
+  final ValueChanged<T?> onReactionChanged;
 
   /// Previous selected reaction widget
   final Reaction<T>? selectedReaction;
