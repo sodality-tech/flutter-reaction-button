@@ -5,7 +5,6 @@ import '../utils/extensions.dart';
 import '../utils/reactions_position.dart';
 import 'reactions_box.dart';
 
-
 class ReactionButton<T> extends StatefulWidget {
   /// This triggers when reaction button value changed.
   final ValueChanged<T?> onReactionChanged;
@@ -100,7 +99,8 @@ class _ReactionButtonState<T> extends State<ReactionButton<T>> {
         key: _buttonKey,
         behavior: HitTestBehavior.translucent,
         onTapDown: (details) => _showReactionsBox(details.globalPosition),
-        onLongPressStart: (details) => _showReactionsBox(details.globalPosition),
+        onLongPressStart: (details) =>
+            _showReactionsBox(details.globalPosition),
         child: (_selectedReaction ?? widget.reactions.first).icon,
       );
 

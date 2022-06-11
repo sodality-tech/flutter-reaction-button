@@ -63,7 +63,8 @@ class ReactionContainer<T> extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
-      onLongPressStart: (details) => _showReactionsBox(context, details.globalPosition),
+      onLongPressStart: (details) =>
+          _showReactionsBox(context, details.globalPosition),
       child: child,
     );
   }
