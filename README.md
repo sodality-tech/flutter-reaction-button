@@ -8,11 +8,9 @@ Flutter button reaction it is fully customizable widget such as Facebook reactio
 
 <img src="https://github.com/GeekAbdelouahed/flutter-reaction-button/raw/doc/images/Preview.png"/>
 
-
 ## Demo
 
-<video src="https://user-images.githubusercontent.com/22131872/171996907-b769d8d4-b137-460b-808f-71e24a4d03a8.mp4"></video>
-
+[![Flutter reaction button](https://img.youtube.com/vi/0REgZVVvTXg/0.jpg)](https://youtube.com/shorts/0REgZVVvTXg)
 
 ## Usage
 
@@ -34,6 +32,7 @@ import 'package:flutter_reaction_button/flutter_reaction_button.dart';
 ```
 
 ## Parameters
+
 | parameter                  | description                                                                           | default                                                                                                                                                                               |
 | -------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | OnReactionChanged          | triggered when reaction button value change                                           ||
@@ -50,7 +49,6 @@ import 'package:flutter_reaction_button/flutter_reaction_button.dart';
 | shouldChangeReaction       | Should change initial reaction after selected one or not                               | true |
 | itemScale                  | Scale ratio when item hovered                                                         | 0.3 |
 | itemScaleDuration          | Scale duration while dragging                                                         | const Duration(milliseconds: 100) |
-
 
 ## LICENSE
 
