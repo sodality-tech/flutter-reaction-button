@@ -1,3 +1,8 @@
+## 2.0.1+1
+
+* Minor bugs fix
+* Code improvements, Thanks to [Felix Gabler](https://github.com/felixgabler)
+
 ## 2.0.1
 
 * Add ReactionContainer
