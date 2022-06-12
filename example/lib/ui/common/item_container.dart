@@ -30,28 +30,30 @@ class _ItemContainerState extends State<ItemContainer>
         aspectRatio: 2,
         child: Stack(
           children: [
-            Card(
-              margin: EdgeInsets.zero,
-              elevation: 2,
-              clipBehavior: Clip.antiAlias,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(5),
+            Positioned.fill(
+              child: Card(
+                margin: EdgeInsets.zero,
+                elevation: 2,
+                clipBehavior: Clip.antiAlias,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(5),
+                  ),
                 ),
-              ),
-              child: ReactionContainer<String>(
-                onReactionChanged: (String? value) {
-                  setState(() {
-                    _selectedReaction = value;
-                  });
-                  debugPrint('Selected value: $value');
-                },
-                reactions: widget.reactions,
-                child: Image.asset(
-                  widget.imgPath,
-                  height: 200,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
+                child: ReactionContainer<String>(
+                  onReactionChanged: (String? value) {
+                    setState(() {
+                      _selectedReaction = value;
+                    });
+                    debugPrint('Selected value: $value');
+                  },
+                  reactions: widget.reactions,
+                  child: Image.asset(
+                    widget.imgPath,
+                    height: 200,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
@@ -67,7 +69,7 @@ class _ItemContainerState extends State<ItemContainer>
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(.3),
-                      offset: const Offset(0 , 3),
+                      offset: const Offset(0, 3),
                       blurRadius: 3,
                     )
                   ],
