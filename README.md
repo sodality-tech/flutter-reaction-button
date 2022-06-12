@@ -10,7 +10,7 @@ Flutter button reaction it is fully customizable widget such as Facebook reactio
 
 ## Demo
 
-[![Flutter reaction button](https://img.youtube.com/vi/0REgZVVvTXg/0.jpg)](https://youtube.com/shorts/0REgZVVvTXg)
+[![Flutter reaction button](https://img.youtube.com/vi/0REgZVVvTXg/default.jpg)](https://youtube.com/shorts/0REgZVVvTXg)
 
 ## Usage
 
