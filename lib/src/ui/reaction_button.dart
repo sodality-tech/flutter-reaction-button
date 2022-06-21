@@ -16,6 +16,8 @@ class ReactionButton<T> extends StatefulWidget {
   /// Default reaction button widget
   final Reaction<T>? initialReaction;
 
+  final Reaction<T>? nullReaction;
+
   final List<Reaction<T>> reactions;
 
   /// Offset to add to the placement of the box
@@ -59,6 +61,7 @@ class ReactionButton<T> extends StatefulWidget {
     required this.onReactionChanged,
     required this.onReactionRemoved,
     required this.reactions,
+    this.nullReaction,
     this.initialReaction,
     this.boxOffset = Offset.zero,
     this.boxPosition = VerticalPosition.TOP,
@@ -109,9 +112,9 @@ class _ReactionButtonState<T> extends State<ReactionButton<T>> {
       );
 
   void _handleTap(Offset position) {
-    if(_selectedReaction != null){
+    if(_selectedReaction != widget.nullReaction){
       setState(() {
-        _selectedReaction = null;
+        _selectedReaction = widget.nullReaction;
       });
       widget.onReactionRemoved.call();
       return;
