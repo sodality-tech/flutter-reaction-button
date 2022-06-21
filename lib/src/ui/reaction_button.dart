@@ -87,7 +87,7 @@ class _ReactionButtonState<T> extends State<ReactionButton<T>> {
   Reaction? _selectedReaction;
 
   void _init() {
-    _selectedReaction = widget.initialReaction;
+    _selectedReaction = widget.initialReaction ?? widget.nullReaction;
   }
 
   @override
