@@ -21,6 +21,13 @@ class AppWidget extends StatelessWidget {
             Builder(
               builder: (ctx) {
                 return ReactionButton<String>(
+                  onReactionRemoved: (){
+                    ScaffoldMessenger.of(ctx).showSnackBar(
+                      SnackBar(
+                        content: Text('Removed reaction'),
+                      ),
+                    );
+                  },
                   onReactionChanged: (String? value) {
                     ScaffoldMessenger.of(ctx).showSnackBar(
                       SnackBar(

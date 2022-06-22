@@ -11,8 +11,12 @@ class ReactionButton<T> extends StatefulWidget {
   /// This triggers when reaction button value changed.
   final OnReactionChanged<T> onReactionChanged;
 
+  final Function onReactionRemoved;
+
   /// Default reaction button widget
   final Reaction<T>? initialReaction;
+
+  final Reaction<T>? nullReaction;
 
   final List<Reaction<T>> reactions;
 
@@ -55,7 +59,9 @@ class ReactionButton<T> extends StatefulWidget {
   ReactionButton({
     Key? key,
     required this.onReactionChanged,
+    required this.onReactionRemoved,
     required this.reactions,
+    this.nullReaction,
     this.initialReaction,
     this.boxOffset = Offset.zero,
     this.boxPosition = VerticalPosition.TOP,
@@ -81,7 +87,7 @@ class _ReactionButtonState<T> extends State<ReactionButton<T>> {
   Reaction? _selectedReaction;
 
   void _init() {
-    _selectedReaction = widget.initialReaction;
+    _selectedReaction = widget.initialReaction == null ? widget.nullReaction : widget.initialReaction ;
   }
 
   @override
@@ -100,10 +106,22 @@ class _ReactionButtonState<T> extends State<ReactionButton<T>> {
   Widget build(BuildContext context) => GestureDetector(
         key: _buttonKey,
         behavior: HitTestBehavior.translucent,
-        onTapDown: (details) => _showReactionsBox(details.globalPosition),
-        onLongPressStart: (details) => _showReactionsBox(details.globalPosition),
+        onTapDown: (details) => _handleTap(details.globalPosition),
+        onLongPressStart: (details) => _handleTap(details.globalPosition),
         child: (_selectedReaction ?? widget.reactions.first).icon,
       );
+
+  void _handleTap(Offset position) {
+    if(_selectedReaction != widget.nullReaction){
+      setState(() {
+        _selectedReaction = widget.nullReaction;
+      });
+      widget.onReactionRemoved.call();
+      return;
+    }
+
+    _showReactionsBox(position);
+  }
 
   void _showReactionsBox(Offset buttonOffset) async {
     final buttonSize = _buttonKey.widgetSize;
